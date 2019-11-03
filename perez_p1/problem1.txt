@@ -1,0 +1,8 @@
+rat
+cow
+horse
+cat
+dog
+donkey
+chicken
+sheep
