@@ -1,0 +1,7 @@
+cat: 4
+rat: 3
+dog: 2
+mouse: 3
+horse: 2
+rat: 2
+cat: 2

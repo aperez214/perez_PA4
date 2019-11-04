@@ -1,5 +1,6 @@
 package perez_p2;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Scanner;
 import java.io.*;
 
@@ -7,18 +8,15 @@ import java.io.*;
 public class DuplicateCounter {
 
 	
-	public 	ArrayList<String> wordCounter = new ArrayList<String>();
+	public 	ArrayList<Integer> wordCounter = new ArrayList<Integer>();
+    public	ArrayList<String> strInput = new ArrayList<String>();
 
 	
 	@SuppressWarnings("resource")
 	public void count() throws IOException {
-				
-	    ArrayList<String> strInput = new ArrayList<String>();
-	    ArrayList<Integer> intInput = new ArrayList<Integer>();
-
+			
 		int i = 0;
 		int j = 0;
-		int count = 0;
 
 		FileInputStream dataFile = new FileInputStream("problem2.txt");
 		
@@ -33,28 +31,27 @@ public class DuplicateCounter {
 	    
 	    for (i = 0; i < strInput.size(); i++) {
 	    	
-	    	intInput.add(0);
-	    	
+    		wordCounter.add(Collections.frequency(strInput, strInput.get(i)));
+
 	    	for (j = i + 1; j < strInput.size(); j++) {
 	    		
-	    		
 	    		if (strInput.get(i).compareTo(strInput.get(j)) == 0) {
-	    			wordCounter.add(strInput.get(j));
+	    			
 	    			strInput.remove(j);
-	    			count++;
-
+	    			
 	    		}
 
 
 	    	}
-    		intInput.set(i, count);
-
+	    	
+	 
 	    }
 	    
 		dataFile.close();
 		
-		System.out.println(intInput);
-		
+		System.out.println(wordCounter);
+		System.out.println(strInput);
+
 	}
 
 	
@@ -62,16 +59,20 @@ public class DuplicateCounter {
 		
 		int i = 0;
 		
-		FileOutputStream outputFile = new FileOutputStream("unique_words_counts.txt");
+		FileOutputStream outputFile = new FileOutputStream("unique_word_counts.txt");
 		PrintWriter outFS = new PrintWriter(outputFile);	
 	    	
-		for (i = 0; i < wordCounter.size(); i++)
-			
-			outFS.println(wordCounter.get(i));
-	    
+		for (i = 0; i < wordCounter.size(); i++) {
+							
+				
+					outFS.println(strInput.get(i) + ": "+ wordCounter.get(i));
+				
+				}
+	
+		
 		outFS.flush();
 		outputFile.close();
-
+		
 		}
 	
 		

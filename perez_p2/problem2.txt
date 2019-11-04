@@ -4,9 +4,11 @@ cat
 dog
 mouse
 mouse
+dog
+horse
+horse
+mouse
 rat
 rat
-rat
-cat
 cat
 cat

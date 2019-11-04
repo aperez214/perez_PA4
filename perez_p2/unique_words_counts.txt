@@ -1,6 +1,0 @@
-cat
-cat
-cat
-rat
-rat
-mouse

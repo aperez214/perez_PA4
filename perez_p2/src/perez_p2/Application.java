@@ -1,5 +1,6 @@
 package perez_p2;
 import java.io.*;
+import java.util.Collections;
 
 public class Application {
 
@@ -14,3 +15,6 @@ public class Application {
 	}
 	
 }
+
+
+//	System.out.println(strInput.get(i) + ": " + Collections.frequency(wordCounter, wordCounter.get(i)));
